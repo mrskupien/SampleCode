@@ -10,7 +10,7 @@ public class UIManager : Singleton<UIManager>
 
     public Events.EventFadeComplete OnMainMenuFadeComplete;
 
-    protected override void Start()
+    private void Start()
     {
         _mainMenu.OnMainMenuFadeComplete.AddListener(HandleMainMenuFadeComplete);
         GameManager.Instance.OnGameStateChanged.AddListener(HandleGameStateChanged);
@@ -26,7 +26,7 @@ public class UIManager : Singleton<UIManager>
         _pauseMenu.gameObject.SetActive(currentState == GameManager.GameState.PAUSED);
     }
 
-    protected override void Update()
+    private void Update()
     {
         if(GameManager.Instance.CurrentGameState != GameManager.GameState.PREGAME)
             return;

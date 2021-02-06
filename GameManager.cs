@@ -24,8 +24,7 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-
-    protected override void Start()
+    private void Start()
     {
         DontDestroyOnLoad(gameObject);
         InstantiateSystemPrefabs();
@@ -33,7 +32,7 @@ public class GameManager : Singleton<GameManager>
         UIManager.Instance.OnMainMenuFadeComplete.AddListener(HandleMainMenuFadeComplete);
     }
 
-    protected override void Update()
+    private void Update()
     {
         if(_currentGameState == GameState.PREGAME)
             return;

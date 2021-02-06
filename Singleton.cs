@@ -35,13 +35,4 @@ public abstract class Singleton<T> : MonoBehaviour where T : Singleton<T>
             _instance = null;
     }
 
-    protected virtual void Start()
-    {
-
-    }
-
-    protected virtual void Update()
-    {
-        
-    }
 }
